@@ -1,0 +1,57 @@
+spring:
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      use-new-id-generator-mappings: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/demodb?serverTimezone=UTC&characterEncoding=UTF-8
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 10170612
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 1
+    lettuce:
+      shutdown-timeout: 50000
+    timeout: 50000
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+  mail:
+    default-encoding: UTF-8
+    host: smtp.chinadream.org
+    username: admin@chinadream.org
+    password: Yq1996052468
+    protocol: smtp
+    port: 465
+    from: admin@chinadream.org
+    properties.mail.smtp.auth: true
+    properties.mail.smtp.port: 465
+    properties.mail.smtp.starttls.enable: true
+    properties.mail.smtp.starttls.required: true
+    properties.mail.smtp.ssl.enable: true
+
+server:
+  port: 8080
+  tomcat:
+    max.http.post.size: 20971520
+
+swagger:
+  basic:
+    enable: true
+    username: clj
+    password: clj
+
+
